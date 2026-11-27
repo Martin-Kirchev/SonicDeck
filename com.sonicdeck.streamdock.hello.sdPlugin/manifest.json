@@ -1,0 +1,36 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/actions/actionIcon",
+      "Name": "Hello Sonic Deck",
+      "States": [
+        {
+          "Image": "images/actions/helloDefault"
+        }
+      ],
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Press to test Sonic Deck",
+      "UUID": "com.sonicdeck.streamdock.hello.hello"
+    }
+  ],
+  "SDKVersion": 3,
+  "Author": "Sonic Deck",
+  "Category": "Sonic Deck",
+  "CategoryIcon": "images/icons/pluginIcon",
+  "CodePath": "sonicDeckStreamDockHello.exe",
+  "CodePathWin": "sonicDeckStreamDockHello.exe",
+  "Description": "A tiny C++ plugin to test Stream Dock plugin loading and key events.",
+  "Name": "Sonic Deck Hello",
+  "Icon": "images/icons/pluginIcon",
+  "Version": "0.1.0",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}

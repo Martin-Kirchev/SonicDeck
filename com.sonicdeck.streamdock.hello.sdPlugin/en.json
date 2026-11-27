@@ -1,0 +1,9 @@
+{
+  "Name": "Sonic Deck Hello",
+  "Description": "A tiny C++ plugin to test Stream Dock plugin loading and key events.",
+  "Category": "Sonic Deck",
+  "com.sonicdeck.streamdock.hello.hello": {
+    "Name": "Hello Sonic Deck",
+    "Tooltip": "Press to test Sonic Deck"
+  }
+}
