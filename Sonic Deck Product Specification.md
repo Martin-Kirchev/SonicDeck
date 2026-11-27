@@ -1,6 +1,6 @@
 # Sonic Deck — January 2027 Beta Specification
 
-**Status:** Proposed beta commitment  
+**Status:** Proposed beta commitment; loader prototype validated  
 **Target:** January 2027  
 **Product:** Sonic Deck plugin for MiraBox Stream Dock software
 
@@ -82,7 +82,15 @@ These can be considered for a later release after the core plugin has been teste
 - **Spotify account:** Playback control through Spotify's Web API requires Spotify Premium. Sonic Deck will not stream audio itself; Spotify remains the player.
 - **Spotify developer access:** Spotify's published 2026 Development Mode limits include an active Premium subscription for the app owner and a limit of five users for a new app, including the app owner. The January goal is intentionally a working beta for the project owner and up to four testers, not a public release. Before inviting testers, confirm the app's current user limit and add only eligible testers through Spotify's developer dashboard.
 - **Active device:** Spotify playback commands need an available Spotify playback device. Sonic Deck will not silently start an unrelated device or claim to select the desktop app.
-- **MiraBox compatibility:** The exact Stream Dock software/SDK version and package format must be confirmed in the first development week. Store submission is deferred and is not part of the beta commitment.
+- **MiraBox compatibility:** The prototype's declared minimum is Stream Dock software 2.9, and its SDK manifest version and local package format have now been validated as described below. The exact Stream Dock application build used for the successful test was not recorded. Store-specific packaging and submission remain unconfirmed and are outside the beta commitment.
+
+### Confirmed prototype SDK and package format
+
+- **Stream Dock SDK version:** SDK version 3, as declared by `SDKVersion: 3` in the prototype's `manifest.json`.
+- **SDK implementation:** MiraBox's C++ StreamDock Plugin SDK/template, with its source and bundled dependencies under `cpp/StreamDockCPPSDK`.
+- **Plugin package format:** A Windows `.sdPlugin` directory bundle. The package contains `manifest.json`, the plugin executable named by `CodePath`/`CodePathWin`, and the referenced image assets. The local test installs this folder under `%APPDATA%\Hotspot\StreamDock\plugins\` and restarts Stream Dock. This describes the validated development install format, not a signed installer or store submission format.
+- **Prototype compatibility declaration:** Windows 10 minimum and Stream Dock software 2.9 minimum, as declared in the prototype manifest. On 27 November 2026, the Hello Sonic Deck package was built, installed, loaded, and its key press behavior was confirmed by the project owner.
+- **Scope of validation:** This confirms the plugin host/package/key-event path only. Spotify authorization, API access, and playback actions remain unimplemented and unvalidated.
 
 These constraints must be checked early, before promising tester access. Spotify documents the Premium and development-mode restrictions in its [Web API reference](https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback) and [February 2026 migration guide](https://developer.spotify.com/documentation/web-api/tutorials/february-2026-migration-guide); available permissions are listed in its [OAuth scopes reference](https://developer.spotify.com/documentation/web-api/concepts/scopes).
 
@@ -94,7 +102,9 @@ The work is split into four stages. Each stage has a clear result so we can spot
 
 Before building every button, confirm that Sonic Deck can be made into a MiraBox Stream Dock plugin and can connect to Spotify on Windows. Get one Spotify command working and confirm that Sonic Deck can read the current playback state. Check that the project owner's Spotify developer account and the intended few testers can be added to the app.
 
-**Ready to move on when:** the plugin can run in Stream Dock, connect to Spotify, send a command, and receive playback information on the target Windows setup.
+**Progress:** The Hello Sonic Deck prototype now builds and runs in Stream Dock, and a key press produces the expected title change and success indicator. SDK version 3 and the `.sdPlugin` directory bundle format are recorded above. Spotify sign-in, a playback command, and playback-state reading are still outstanding, so the full Stage 1 exit criteria are not yet met.
+
+**Ready to move on when:** the plugin can connect to Spotify, send a command, and receive playback information on the target Windows setup; the Stream Dock loader/package check is already complete.
 
 **Why this comes first:** if Spotify access or the Stream Dock plugin format blocks the project, we need to know while there is still time to adjust the beta plan.
 

@@ -1,6 +1,6 @@
 # Sonic Deck
 
-Sonic Deck is a planned plugin for MiraBox Stream Dock software. It will let users control Spotify playback from customizable Stream Dock buttons, so they can manage music without leaving their current task.
+Sonic Deck is a Windows plugin for MiraBox Stream Dock software, intended to let users control Spotify playback from customizable Stream Dock buttons. The Spotify controls are planned; the working prototype currently verifies plugin loading and key events.
 
 Sonic Deck does not play or stream audio. Spotify remains the player, and playback commands are sent to the user's active Spotify device.
 
@@ -39,6 +39,8 @@ The following features are outside the January 2027 beta commitment and may be c
 
 ## Project status
 
-The project is in the planning stage. The January 2027 goal is a working beta for the project owner and up to four testers. Stream Dock SDK and package requirements and Spotify access still need to be confirmed. Public release and MiraBox plugin store submission are deferred until after the beta and a review of Spotify's access limits.
+The minimal C++ Hello Sonic Deck prototype has been built and tested in Stream Dock. It loads as an action, displays “Press me,” and changes to “It works!” with the success indicator when pressed. This confirms the local plugin package, loading, and key-event path; it does not yet implement or test Spotify authorization or playback controls.
+
+The January 2027 goal remains a working beta for the project owner and up to four testers. Spotify developer access, the required playback features, and beta eligibility still need to be confirmed. Store submission and public distribution remain deferred. See the [test plugin guide](com.sonicdeck.streamdock.hello.sdPlugin/README.md) for local build and installation steps and the [product specification](Sonic%20Deck%20Product%20Specification.md) for the confirmed SDK version and package format.
 
 The product specification is in [Sonic Deck Product Specification.md](Sonic%20Deck%20Product%20Specification.md), and the original concept is in [Sonic Deck Idea.md](Sonic%20Deck%20Idea.md).
